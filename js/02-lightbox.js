@@ -15,19 +15,9 @@ const galleryContent = galleryItems
   .join("");
 
 ulEl.insertAdjacentHTML("beforeend", galleryContent);
-console.log(ulEl);
+// console.log(ulEl);
 
-ulEl.addEventListener("click", openLargeImage);
-function openLargeImage(event) {
-  //Заборонити стандартну поведінку браузера
-  event.preventDefault();
-  //перевірка що клікаємо саме на тег img
-  if (event.target.nodeName !== "IMG") {
-    return;
-  }
-
-  var gallery = new SimpleLightbox(".gallery__link", {
-    captionsData: "alt",
-    captionDelay: 500,
-  });
-}
+var gallery = new SimpleLightbox(".gallery__link", {
+  captionsData: "alt",
+  captionDelay: 500,
+});
